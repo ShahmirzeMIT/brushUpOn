@@ -8,7 +8,27 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-	<header>
+	   <div id="mySidenav" class="sidenav">
+		<div class="upLogo"><img src="./img/LOGO.png" alt=""></div>
+		<div class="upMargin">
+			<p class="upMenu">Menu 1</p>
+			<p class="upMenu">Menu 2</p>	
+		</div>
+		<div class="langs">
+			<ul>
+				<li  class="dropdown upLogo colorWhite">Tr <span> <i class="fa-solid fa-angle-down"></i></span>
+					<div class="dropdown-content3 borderLang">
+						<ul>
+						<li class="colorWhite">Ar</li>
+						<li class="colorWhite">Tr</li>
+						<li class="colorWhite">Fr</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+	   </div>
+	<header >
 		<nav>
 			<div class="logo"><img src="./img/LOGO.png" alt=""></div>
 			<div class="flexMenu">
@@ -17,7 +37,7 @@
 						<li>Menu 1</li>
 						<li>Menu 2</li>
 						<li  class="dropdown">Tr <span> <i class="fa-solid fa-angle-down"></i></span>
-							<div class="dropdown-content">
+							<div class="dropdown-content borderLang">
 								<ul>
 								<li>Ar</li>
 								<li>Tr</li>
@@ -68,9 +88,16 @@
 						</div>
 					</button>
 					<button class="btn" id="signIn">Sign In</button>
+					
 				</div>
 			</div>
 		</nav>
+
+			<div class="voiceUp">
+					<button class="hambMenu" onclick="openNav()" ><img src="./img/hambmenu.png" alt="" id="hambMenu"></button>
+					<img src="./img/volume_up.png" alt="" class="voice">
+			</div>
+
 		<div id="myModal" class="modal">
 			<div class="modal-content pd50x">
 			  <span class=" closeSpan"><i class="fa-solid fa-x"></i></span>
