@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+	<header>
+		<nav>
+			<div class="logo"><img src="./img/LOGO.png" alt=""></div>
+			<div class="flexMenu">
+				<div class="menu">
+					<ul class="dFlexU">
+						<li>Menu 1</li>
+						<li>Menu 2</li>
+						<li  class="dropdown">Tr <span> <i class="fa-solid fa-angle-down"></i></span>
+							<div class="dropdown-content">
+								<ul>
+								<li>Ar</li>
+								<li>Tr</li>
+								<li>Fr</li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="rightSide">
+					<button class="btn dropdown" id="watchList">Watch List   <span class="point"></span>
+						<div class="dropdown-content2">
+							
+							<div class="close"><i class="fa-solid fa-x"></i></div>
+							
+							<ul>
+								<div class="scroll"></div>
+								<div class="scrollPoint"></div>
+								<li>
+									<div class="dFlex">
+										<img src="./img/Rectangle 57.png" alt="">
+										<p class="dropdown2P">The Witcher</p>
+										<p  class="dropdownX">X</p>
+									</div>
+								</li>
+								<li>
+									<div class="dFlex">
+										<img src="./img/queen.png" alt="">
+										<p class="dropdown2P">The Quuen's Gambit </p>
+										<p class="dropdownX">X</p>
+									</div>
+								</li>
+								<li>
+									<div class="dFlex">
+										<img src="./img/batman.png" alt="">
+										<p class="dropdown2P">The Dark Night</p>
+										<p class="dropdownX">X</p>
+									</div>
+								</li>
+								<li>
+									<div class="dFlex">
+										<img src="./img/end.png" alt="">
+										<p class="dropdown2P">No Time to Day</p>
+										<p class="dropdownX">X</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</button>
+					<button class="btn" id="signIn">Sign In</button>
+				</div>
+			</div>
+		</nav>
+		<div id="myModal" class="modal">
+			<div class="modal-content pd50x">
+			  <span class=" closeSpan"><i class="fa-solid fa-x"></i></span>
+			  <h3 class="colorWhite fnt fsize txtCenter pdY">Sign In</h3>
+			  <p class="colorWhite txtCenter fntGlori">Do you have a account?</p>
+			  <p class="inputLabel"><label for="emial" class="colorWhite fnt fs08">Email</label></p>  
+			  <div class="inputs fnt"><input type="text" name="" id="email" placeholder="nusrev@gmail.com"></div>  
+			  <p class="inputLabel"><label for="password" class="colorWhite fnt fs08">Password</label></p>  
+			  <div class="inputs2 fnt"><input type="password" name="" id="password" placeholder="*******"></div>
+			  <p class="textEnd pd4Y"> <a href="#" class="colorWhite fs08 "> Forgot Password?</a></p>
+			  <div class="inputFlex">
+				<div class="colorWhite fs08 pd15Y">
+					Sign in
+				</div>
+				<div class="colorWhite fs08 signIN">
+					Sign Up
+				</div>
+			  </div>
+			  <p class="inputEndP">
+				This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
+			  </p>
+			</div>
+		   
+		   </div>
+	</header>
+	<main></main>
+	<footer></footer>
+	<script src="app.js"></script>
+</body>
+</html>
