@@ -31,7 +31,6 @@ nav{
 	justify-content: space-between;
 }
 
-
 .dFlexU{
 	display: flex;
 	backdrop-filter: invert(15%);
@@ -375,12 +374,18 @@ nav{
    }
    
    main{
-	height: 70vh;
+	height: 80vh;
 	background-color: #161616;
    }
    
+   .open{
+	margin-top: -16px;
+   }
    .swiper {
-	height: 100%;
+
+	overflow-x: hidden;
+   }
+   .pdT300{
 	padding-top: 3em !important;
    }
    .swiper-button-prev{
@@ -402,19 +407,41 @@ nav{
 	justify-content: center;
 	align-items: center;
    }
-
-   .swiper-slide img {
-	display: block;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
+   .icons{
+	display: none;
    }
+   .year{
+	display: none;
+   }
+  
+   .icons ul{
+	display: flex;
+	justify-content: center;
+   }
+   .icons ul li{
+	padding: 0 5px;
+   }
+   .wd100{
+	width: 100%;
+   }
+   .titleF{
+	display: flex;
+    justify-content: space-between;
+    font-size: 0.5em;
+    color: white;
+    width: 90%;
+    font-family: revert;
+    padding: 10px 0;
+    margin: 10px auto;
+}
+
+
+
 
    .swiper {
 	width: 100%;
-	height: 100px;
 	padding:10px 0;
-   }
+   } 
    .swiper-button-prev:after {
 	font-size: 1.5em !important;
 	color: white !important;
@@ -446,7 +473,7 @@ nav{
 	}
 	.swiper {
 		width: 100%;
-		height: 200px;
+		/* height: 250px; */
 		padding:10px 0;
 	   }
 }
@@ -456,6 +483,9 @@ nav{
 		width: 230px !important;}
 	.modal-content{
 		width: 50%;
+	}
+	.titleF{
+		font-size: 0.7em;
 	}
 	
 	.wd150{

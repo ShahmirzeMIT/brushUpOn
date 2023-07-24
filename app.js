@@ -6,11 +6,7 @@ const modal = document.getElementById("myModal");
 const span = document.querySelector(".closeSpan");
 const mySidenav = document.getElementById("mySidenav");
 const content = document.querySelectorAll('.content');
-const show = document.querySelector(".show");
-const h70 = document.querySelectorAll('.h70');
-const iconMenu = document.querySelectorAll('.iconMenu');
-const nameIn = document.querySelectorAll('.nameIn');
-
+const open=document.querySelectorAll('.open')
 
 watchList.addEventListener("click", () => {
   dropdownContent2.style.display = "block";
@@ -42,30 +38,36 @@ function openNav() {
   mySidenav.style.width = "250px";
 }
 
-function handleMouseOver(index) {
-  iconMenu[index].style.display = "flex";
-  h70[index].classList.add("nameBlur");
-  nameIn[index].style.display = "flex";
+function MouseOver(index) {
+  open[index].style.background = "red";
+  open[index].style.position = "relative";
+  open[index].style.zIndex = "99999";
+  [index].classList.add("nameBlur");
+  [index].style.display = "flex";
 }
 
-function handleMouseOut(index) {
-  h70[index].classList.remove("nameBlur");
-  nameIn[index].style.display = "none";
-  iconMenu[index].style.display = "none";
+function MouseOut(index) {
+  open[index].style.background = "inherit";
+  open[index].style.position = "inherit";
+  open[index].style.zIndex = "inherit";
+  [index].style.display = "none";
+  [index].style.display = "none";
 }
 
 content.forEach((item, index) => {
+
   item.addEventListener("mouseover", () => {
-    handleMouseOver(index);
+    MouseOver(index);
   });
   item.addEventListener("mouseout", () => {
-    handleMouseOut(index);
+    MouseOut(index);
   });
 });
 
 let swiper = new Swiper(".mySwiper", {
   slidesPerView: 1,
   spaceBetween: 9,
+  
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
@@ -94,7 +96,7 @@ let swiper = new Swiper(".mySwiper", {
       var currentTranslate = swiper.translate;
       
       // Set the maximum limit for translation
-      var maxTranslate = -400;
+      var maxTranslate = -410;
       
       // If the current translate value exceeds the maximum limit, set it to the maximum
       if (currentTranslate < maxTranslate) {
