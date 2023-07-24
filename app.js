@@ -94,7 +94,7 @@ let swiper = new Swiper(".mySwiper", {
       var currentTranslate = swiper.translate;
       
       // Set the maximum limit for translation
-      var maxTranslate = -550;
+      var maxTranslate = -540;
       
       // If the current translate value exceeds the maximum limit, set it to the maximum
       if (currentTranslate < maxTranslate) {
