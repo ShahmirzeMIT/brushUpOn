@@ -411,8 +411,8 @@ nav{
    }
 
    .swiper {
-	width: 100%;
-	height: 130px;
+	width: 130%;
+	height: 100px;
 	padding:10px 0;
    }
    .swiper-button-prev:after {
