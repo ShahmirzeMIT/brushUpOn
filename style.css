@@ -373,9 +373,137 @@ nav{
 	position: absolute;
 	bottom: 0;
    }
+   
+   main{
+	height: 70vh;
+	background-color: #161616;
+   }
+   .slider{
+	position: relative;
+	overflow: hidden;
+   }
+   .slider-wrapper {
+	display: flex;
+	transition: transform 0.3s ease;
+}
+
+
+
+   .slider-content{
+	display: flex;
+	
+	transition: all 1s;
+   }
+   .content{
+	padding: 10px;
+	transition: all 1s;
+	margin-top: 2em;
+   }
+   .content > img{
+	width: 150px;
+	height: 200px;
+	object-fit: none;
+	transition: all 1s;
+	border-radius: 25px;
+   }
+   .right{
+	padding: 5px 10px;
+    font-size: 1.5em;
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    top: 35%;
+    right: 10%;
+   }
+   .left{
+	padding: 5px 10px;
+    font-size: 1.5em;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 35%;
+    left: 8%;
+   }
+   .show{
+	display: none;
+   }
+   .name{
+	color: antiquewhite;
+    font-size: 0.7em;
+    font-family: system-ui;
+    display: flex;
+    justify-content: space-between;
+   }
+   
+   .nameIn{
+	display: none;
+	justify-content: space-between;
+	width: 70px;
+	transition: all 1s;
+   }
+   .m10X{
+	margin-left: 5px;
+   }
+
+   .dFlexIcon{
+	display: flex;
+	justify-content: center;
+   }
+   .dFlexIcon li{
+	margin: 0 10px;
+   }
+   .content:hover{
+	transform: scale(1.2);
+   }
+   .iconMenu{
+	display: none;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+   }
+   .showP{
+	display: none;
+   }
+   .h70{
+	height: 100px;
+   }
+   .wd150{
+	width: 150px;
+   }
+   .nameBlur{
+	margin-top: -24px;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	background-color:rgba(91, 78, 82, 0.4);
+	backdrop-filter: blur(4px) brightness(0.78) contrast(208%) grayscale(74%) invert(21%);
+   }
+   .pdY1e{
+	padding-top:1em ;
+   }
+   .wd30{
+	width: 30px;
+   }
+   .wd25{
+	width: 25px;
+   }
    @media only screen and (min-width: 600px) {
 	.modal-content{
 		width: 50%;
+	}
+	.content > img{
+		width: 200px;
+		height: 200px;
+		object-fit: none;
+
+	   }
+	.wd150{
+		width: inherit;
+	}
+	.wd30{
+		width: inherit;
+	}
+	.wd25{
+		width: inherit;
 	}
    }
    @media only screen and (min-width: 800px) {
@@ -394,6 +522,25 @@ nav{
 	.sidenav{
 		display: none;
 	}
+	.slider-content{
+		padding:0 4em;
+	}
+	.content > img{
+		width:250px;
+		height:inherit;
+		object-fit: inherit;
+		border-radius: inherit;
+	}
+	.show{
+		display: block;
+	}
+	.m10X{
+		margin-left: 10px;
+	   }
+	   .nameBlur{
+		margin-top: -19px;
+	   }
+	   
    }
    @media only screen and (min-width: 1000px) {
 	.modal-content{

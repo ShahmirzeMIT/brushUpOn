@@ -1,0 +1,24 @@
+body {
+	margin: 0;
+	padding: 0;
+   }
+   
+   .slideshow {
+	border: 1px solid #ccc;
+	overflow: hidden;
+   }
+   
+   .image-list {
+	display: flex;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	transition: transform 0.3s ease;
+   }
+   
+   
+   
+   .image-list img {
+	object-fit: cover;
+   }
+   
