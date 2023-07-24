@@ -196,7 +196,7 @@ nav{
 	height: 500px;
    }
    .colorWhite{
-	color: white;
+	 color: #c5c1c1;;
    }
    .fnt{
 	font-family:Arial, Helvetica, sans-serif;
@@ -275,7 +275,8 @@ nav{
    }
    .inputEndP{
 	width: 97%;
-    margin: 0 auto;
+	color: #99a19e;
+    margin: 2em auto 0 auto;
     font-size: 0.9em;
     text-align: center;
    }
@@ -534,6 +535,9 @@ nav{
 	   .dson{
 		display: inherit !important;
 	   }
+	   main{
+		height: 60vh;
+	   }
 	   .h250{
 		height: 240px;
 	   }
@@ -557,6 +561,9 @@ nav{
 	}
 	.wd25{
 		width: inherit;
+	}
+	main{
+		height: 70vh;
 	}
    }
    @media only screen and (min-width: 800px) {
@@ -610,6 +617,9 @@ nav{
 		right: var(--swiper-navigation-sides-offset,3em) !important;
 		top: 8em !important;
 	   }
+	main{
+		height: 90vh;
+	}
 	   
    }
    @media only screen and (min-width: 900px) {
@@ -621,6 +631,9 @@ nav{
 		right: var(--swiper-navigation-sides-offset,5em) !important;
 		
 	   }
+	   main{
+		height: 100vh;
+	}
    }
    @media only screen and (min-width: 1000px) {
 	.modal-content{
@@ -639,6 +652,9 @@ nav{
 	   }
    }
    @media only screen and (min-width: 1100px) {
+	main{
+		height: 110vh;
+	}
 	.modal-content{
 		width: 30%;
 	}
