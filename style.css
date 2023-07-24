@@ -411,7 +411,7 @@ nav{
    }
 
    .swiper {
-	width: 150%;
+	width: 150% !important;
 	height: 100px;
 	padding:10px 0;
    }
