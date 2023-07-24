@@ -374,7 +374,7 @@ nav{
    }
    
    main{
-	height: 80vh;
+	height: 45vh;
 	background-color: #161616;
    }
    
@@ -383,6 +383,9 @@ nav{
    }
    .swiper {
 	overflow-x: hidden;
+   }
+   .pdT200{
+	padding-top: 1.5em !important;
    }
    .pdT300{
 	padding-top: 3em !important;
@@ -398,6 +401,7 @@ nav{
    }
 
    .swiper-slide {
+
 	width: 135px !important;
 	margin-right: 5px;
 	text-align: center;
@@ -428,10 +432,50 @@ nav{
     justify-content: space-between;
     font-size: 0.4em;
     color: white;
-    width: 90%;
+    width: 100%;
     font-family: revert;
     padding: 10px 0;
     margin: 10px auto;
+    
+}
+.pdX5{
+	padding-left: 5px;
+}
+.pdX-5{
+	padding-right: 5px;
+}
+.animation{
+	
+	background: rgba(249, 249, 249, 0.19);
+    border-bottom-left-radius: 5px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3.5px);
+    -webkit-backdrop-filter: blur(3.5px);
+    border-bottom-right-radius: 5px;
+}
+.content{
+	transition: all 1s;
+}
+.h250{
+	height: 180px;
+}
+.zIndexMAx{
+	position: absolute;
+	z-index: 999999;
+}
+.content:hover{
+	position: relative;
+	z-index: 9999999;
+	transform: scaleY(1.3) scaleX(1.1);
+}
+.wd30Image{
+	width: 30px;
+}
+.wd35Image{
+	width: 30px;
+}
+.dson{
+	display: none !important;
 }
 
 
@@ -459,10 +503,13 @@ nav{
    }
    .swiper-wrapper{
 	margin-left: 1.5em;
-}
+	}
    @media only screen and (min-width: 400px) {
 	.swiper-slide {
 		width: 190px !important;}
+		.h250{
+			height: 230px;
+		   }
 	
 }
    
@@ -474,6 +521,12 @@ nav{
 		width: 100%;
 		/* height: 250px; */
 		padding:10px 0;
+	   }
+	   .dson{
+		display: inherit !important;
+	   }
+	   .h250{
+		height: 240px;
 	   }
 }
    
@@ -498,6 +551,9 @@ nav{
 	}
    }
    @media only screen and (min-width: 800px) {
+	.h250{
+		height: 290px;
+	}
 	.modal-content{
 		width: 40%;
 	}
@@ -588,6 +644,9 @@ nav{
 		right: var(--swiper-navigation-sides-offset,9em) !important;
 	
 	   }
+	   .h250{
+		height: 290px;
+	}
    }
    
    @media only screen and (min-width: 1200px) {

@@ -7,6 +7,10 @@ const span = document.querySelector(".closeSpan");
 const mySidenav = document.getElementById("mySidenav");
 const content = document.querySelectorAll('.content');
 const open=document.querySelectorAll('.open')
+const year=document.querySelectorAll('.year')
+const icons=document.querySelectorAll('.icons')
+const swiperSlide=document.querySelectorAll('.swiper-slide')
+
 
 watchList.addEventListener("click", () => {
   dropdownContent2.style.display = "block";
@@ -38,23 +42,22 @@ function openNav() {
   mySidenav.style.width = "250px";
 }
 
-function MouseOver(index) {
-  open[index].style.background = "red";
-  open[index].style.position = "relative";
-  open[index].style.zIndex = "99999";
-  [index].classList.add("nameBlur");
-  [index].style.display = "flex";
+
+function MouseOver(index){
+  open[index].classList.add("animation")
+  year[index].style.display="block"
+  icons[index].style.display="block"
+  swiperSlide[index].classList.add('zIndexMAx')
 }
 
-function MouseOut(index) {
-  open[index].style.background = "inherit";
-  open[index].style.position = "inherit";
-  open[index].style.zIndex = "inherit";
-  [index].style.display = "none";
-  [index].style.display = "none";
+function MouseOut(index){
+  open[index].classList.remove("animation")
+  year[index].style.display="none"
+  icons[index].style.display="none"
 }
 
-content.forEach((item, index) => {
+
+swiperSlide.forEach((item, index) => {
 
   item.addEventListener("mouseover", () => {
     MouseOver(index);
