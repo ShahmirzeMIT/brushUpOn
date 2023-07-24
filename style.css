@@ -374,7 +374,7 @@ nav{
    }
    
    main{
-	height: 45vh;
+	height: 40vh;
 	background-color: #161616;
    }
    
@@ -509,6 +509,9 @@ nav{
 		width: 190px !important;}
 		.h250{
 			height: 230px;
+		   }
+		   main{
+			height: 45vh;
 		   }
 	
 }
