@@ -10,8 +10,6 @@ let intervalId;
 
 function slideImageList() {
   currentIndex++;
-
-  // Check if we need to add more images to maintain continuity
   if (currentIndex >= images.length) {
     currentIndex = 0;
     const firstImages = Array.from(images).slice(0, visibleImages);

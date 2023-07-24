@@ -63,90 +63,131 @@ content.forEach((item, index) => {
   });
 });
 
-const imageList = document.querySelector('.slider-content');
-const images = document.querySelectorAll('.slider-content .content');
-const imageWidth = images[0].offsetWidth + 20;
-const slideDuration = 3000;
-const visibleImages = 3;
-const prevLink = document.getElementById('left');
-const nextLink = document.getElementById('right');
-let currentIndex = 1;
-let intervalId;
+let swiper = new Swiper(".mySwiper", {
+  slidesPerView: 1,
+  spaceBetween: 9,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  breakpoints: {
+    "@0.00": {
+      slidesPerView: 1,
+      spaceBetween: 10,
+    },
+    "@0.75": {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    "@1.00": {
+      slidesPerView: 3,
+      spaceBetween: 40,
+    },
+    "@1.50": {
+      slidesPerView: 4,
+      spaceBetween: 50,
+    },
+  },
+  on: {
+    setTranslate: function (swiper) {
+      // Get the current translate value
+      var currentTranslate = swiper.translate;
+      
+      // Set the maximum limit for translation
+      var maxTranslate = -400;
+      
+      // If the current translate value exceeds the maximum limit, set it to the maximum
+      if (currentTranslate < maxTranslate) {
+        swiper.setTranslate(maxTranslate);
+      }
+    },
+  },
+});
 
-function slideImageList() {
-  const translateValue = -currentIndex * (imageWidth / visibleImages);
-  imageList.style.transition = 'transform 0.3s ease';
-  imageList.style.transform = `translateX(${translateValue}px)`;
-}
+// const imageList = document.querySelector('.slider-content');
+// const images = document.querySelectorAll('.slider-content .content');
+// const imageWidth = images[0].offsetWidth + 20;
+// const slideDuration = 3000;
+// const visibleImages = 3;
+// const prevLink = document.getElementById('left');
+// const nextLink = document.getElementById('right');
+// let currentIndex = 1;
+// let intervalId;
 
-function startSlideshow() {
-  intervalId = setInterval(() => {
-    currentIndex++;
-    slideImageList();
-    if (currentIndex >= images.length + 1) {
-      currentIndex = 1;
-      imageList.style.transition = 'none';
-      imageList.style.transform = `translateX(${(-currentIndex * (imageWidth / visibleImages))}px)`;
-      imageList.offsetHeight; // Force reflow to reset the transition
-      imageList.style.transition = 'transform 0.3s ease';
-    }
-  }, slideDuration);
-}
+// function slideImageList() {
+//   const translateValue = -currentIndex * (imageWidth / visibleImages);
+//   imageList.style.transition = 'transform 0.3s ease';
+//   imageList.style.transform = `translateX(${translateValue}px)`;
+// }
 
-function pauseSlideshow() {
-  clearInterval(intervalId);
-}
+// function startSlideshow() {
+//   intervalId = setInterval(() => {
+//     currentIndex++;
+//     slideImageList();
+//     if (currentIndex >= images.length + 1) {
+//       currentIndex = 1;
+//       imageList.style.transition = 'none';
+//       imageList.style.transform = `translateX(${(-currentIndex * (imageWidth / visibleImages))}px)`;
+//       imageList.offsetHeight; // Force reflow to reset the transition
+//       imageList.style.transition = 'transform 0.3s ease';
+//     }
+//   }, slideDuration);
+// }
 
-function goToPrevious() {
-  currentIndex--;
-  slideImageList();
-  if (currentIndex <= 0) {
-    currentIndex = images.length;
-    imageList.style.transition = 'none';
-    imageList.style.transform = `translateX(${(-currentIndex * (imageWidth / visibleImages))}px)`;
-    imageList.offsetHeight; // Force reflow to reset the transition
-    imageList.style.transition = 'transform 0.3s ease';
-  }
-}
+// function pauseSlideshow() {
+//   clearInterval(intervalId);
+// }
 
-function goToNext() {
-  currentIndex++;
-  slideImageList();
-  if (currentIndex >= images.length + 1) {
-    currentIndex = 1;
-    imageList.style.transition = 'none';
-    imageList.style.transform = `translateX(${(-currentIndex * (imageWidth / visibleImages))}px)`;
-    imageList.offsetHeight; // Force reflow to reset the transition
-    imageList.style.transition = 'transform 0.3s ease';
-  }
-}
+// function goToPrevious() {
+//   currentIndex--;
+//   slideImageList();
+//   if (currentIndex <= 0) {
+//     currentIndex = images.length;
+//     imageList.style.transition = 'none';
+//     imageList.style.transform = `translateX(${(-currentIndex * (imageWidth / visibleImages))}px)`;
+//     imageList.offsetHeight; // Force reflow to reset the transition
+//     imageList.style.transition = 'transform 0.3s ease';
+//   }
+// }
 
-if (images.length > visibleImages - 1) {
-  slideImageList(); // Initialize the position of the slider
-  startSlideshow();
+// function goToNext() {
+//   currentIndex++;
+//   slideImageList();
+//   if (currentIndex >= images.length + 1) {
+//     currentIndex = 1;
+//     imageList.style.transition = 'none';
+//     imageList.style.transform = `translateX(${(-currentIndex * (imageWidth / visibleImages))}px)`;
+//     imageList.offsetHeight; // Force reflow to reset the transition
+//     imageList.style.transition = 'transform 0.3s ease';
+//   }
+// }
 
-  // Pause the slideshow on mouseover
-  imageList.addEventListener('mouseover', pauseSlideshow);
+// if (images.length > visibleImages - 1) {
+//   slideImageList(); // Initialize the position of the slider
+//   startSlideshow();
 
-  // Resume the slideshow on mouseout
-  imageList.addEventListener('mouseout', startSlideshow);
+//   // Pause the slideshow on mouseover
+//   imageList.addEventListener('mouseover', pauseSlideshow);
 
-  // Add event listeners to the previous and next links for manual navigation
-  prevLink.addEventListener('click', (e) => {
-    e.preventDefault();
-    goToPrevious();
-  });
+//   // Resume the slideshow on mouseout
+//   imageList.addEventListener('mouseout', startSlideshow);
 
-  nextLink.addEventListener('click', (e) => {
-    e.preventDefault();
-    goToNext();
-  });
-} else {
-  // If there are not enough images, you can add a fallback content or hide the slider, for example:
-  imageList.style.display = 'none';
-  // Or you can add a message to inform users that there are not enough images to display the slider.
-  const noImagesMessage = document.createElement('p');
-  noImagesMessage.textContent = 'Not enough images to display the slider.';
-  // sliderContainer.appendChild(noImagesMessage); // Ensure you have a container with the "sliderContainer" ID in your HTML
-}
+//   // Add event listeners to the previous and next links for manual navigation
+//   prevLink.addEventListener('click', (e) => {
+//     e.preventDefault();
+//     goToPrevious();
+//   });
+
+//   nextLink.addEventListener('click', (e) => {
+//     e.preventDefault();
+//     goToNext();
+//   });
+// } else {
+//   // If there are not enough images, you can add a fallback content or hide the slider, for example:
+//   imageList.style.display = 'none';
+//   // Or you can add a message to inform users that there are not enough images to display the slider.
+//   const noImagesMessage = document.createElement('p');
+//   noImagesMessage.textContent = 'Not enough images to display the slider.';
+//   // sliderContainer.appendChild(noImagesMessage); // Ensure you have a container with the "sliderContainer" ID in your HTML
+// }
 
