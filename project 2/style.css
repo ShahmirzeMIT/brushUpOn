@@ -1,0 +1,16 @@
+.text{
+	width: 40%;
+	margin: 2em auto;
+	border: 10px solid black;
+	padding: 10px;
+	text-align: center;
+}
+.search{
+	width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+.highlight {
+	color: red;
+	font-size: 2em;
+ }
